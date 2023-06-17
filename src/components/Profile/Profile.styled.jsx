@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const ProfileWrap = styled.div`
-  width: 800px;
+  width: 700px;
   margin: 0 auto;
   padding: 170px 50px;
   background: linear-gradient(to right, #50c4f2, #34e89e);
@@ -79,6 +79,7 @@ export const Label = styled.span`
   align-items: center;
   justify-content: center;
   margin-bottom: 10px;
+  font-size: 20px;
 `;
 
 export const Quantity = styled.span`

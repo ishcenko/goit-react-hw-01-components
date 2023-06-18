@@ -57,8 +57,7 @@ export const Stats = styled.ul`
   
   display: flex;
   justify-content: space-between;
-  border: 1px solid black
-  border-radius: 10px;
+  border: 1px solid black;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   

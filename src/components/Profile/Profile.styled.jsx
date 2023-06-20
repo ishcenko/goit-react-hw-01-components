@@ -12,7 +12,7 @@ export const ProfileWrap = styled.div`
 
 export const Description = styled.div`
   width: 350px;
-  height: 280px;
+  height: 350px;
   margin: 0 auto;
   padding: 50px;
   background: linear-gradient(90deg,#f1e792,#ecd1aa);  
@@ -48,25 +48,21 @@ export const Location = styled.p`
 `;
 
 export const Stats = styled.ul`
-  width: 450px;
-  height: 100px;
+  width: 250px;
+  height: 300px;
   background: linear-gradient(90deg, #9ad7ee, #f2f928);
   margin: 0 auto;
-
   margin-top: 25px;
-  
   display: flex;
+  align-items: center;
   justify-content: space-between;
   border: 1px solid black;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  
 `;
 
 export const ListItem = styled.li`
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  display: block;
   align-items: center;
   justify-content: center;
   border-right: 1px solid gray;
@@ -78,12 +74,14 @@ export const Label = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   font-size: 20px;
 `;
 
 export const Quantity = styled.span`
   display: flex;
+  margin-bottom: 15px;
+  /* flex-direction: column; */
   align-items: center;
   justify-content: center;
   font-weight: 700;

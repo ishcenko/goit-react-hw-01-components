@@ -13,28 +13,30 @@ import {
 } from './Profile.styled';
 
 const Profile = ({ username, tag, location, avatar, stats }) => {
+  const statsArray = Array.isArray(stats) ? stats : [stats];
+
   return (
     <ProfileWrap>
       <Description>
         <Avatar src={avatar} alt={username} />
-        <Name>{username}</Name>
-        <Tag>@{tag}</Tag>
-        <Location>{location}</Location>
+        <div>
+          <Name>{username}</Name>
+          <Tag>@{tag}</Tag>
+          <Location>{location}</Location>
+        </div>
       </Description>
 
       <Stats>
-        <ListItem>
-          <Label>Followers</Label>
-          <Quantity>{stats.followers}</Quantity>
-        </ListItem>
-        <ListItem>
-          <Label>Views</Label>
-          <Quantity>{stats.views}</Quantity>
-        </ListItem>
-        <ListItem>
-          <Label>Likes</Label>
-          <Quantity>{stats.likes}</Quantity>
-        </ListItem>
+        {statsArray.map((stat, index) => (
+          <ListItem key={index}>
+            <Label>Followers</Label>
+            <Quantity>{stat.followers}</Quantity>
+            <Label>Views</Label>
+            <Quantity>{stat.views}</Quantity>
+            <Label>Likes</Label>
+            <Quantity>{stat.likes}</Quantity>
+          </ListItem>
+        ))}
       </Stats>
     </ProfileWrap>
   );
@@ -45,13 +47,20 @@ Profile.propTypes = {
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   avatar: PropTypes.string.isRequired,
-  stats: PropTypes.arrayOf(
+  stats: PropTypes.oneOfType([
+    PropTypes.arrayOf(
+      PropTypes.shape({
+        followers: PropTypes.number.isRequired,
+        views: PropTypes.number.isRequired,
+        likes: PropTypes.number.isRequired,
+      })
+    ),
     PropTypes.shape({
       followers: PropTypes.number.isRequired,
       views: PropTypes.number.isRequired,
       likes: PropTypes.number.isRequired,
-    }).isRequired
-  ).isRequired,
+    }),
+  ]).isRequired,
 };
 
 export default Profile;

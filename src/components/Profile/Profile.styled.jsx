@@ -65,7 +65,8 @@ export const Stats = styled.ul`
 
 export const ListItem = styled.li`
   display: flex;
-  gap:10px;
+  flex-direction: column;
+  gap: 10px;
   align-items: center;
   justify-content: center;
   border-right: 1px solid gray;
